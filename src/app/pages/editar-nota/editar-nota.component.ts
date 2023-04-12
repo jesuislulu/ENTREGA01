@@ -11,9 +11,9 @@ import { ELEMENT_DATA } from 'src/app/constants/constants';
 export class EditarNotaComponent {
   dataEdit = JSON.parse(this.message);
 
-  nombreControl = new FormControl(this.dataEditar.nota.nombre,[Validators.minLength(3),Validators.pattern(/^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s]+$/)]);
-  apellidoControl = new FormControl(this.dataEditar.nota.apellido,[Validators.minLength(3),Validators.pattern(/^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s]+$/)]);
-  examenControl = new FormControl(this.dataEditar.nota.examen,[]);
+  nombreControl = new FormControl(this.dataEdit.nota.nombre,[Validators.minLength(3),Validators.pattern(/^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s]+$/)]);
+  apellidoControl = new FormControl(this.dataEdit.nota.apellido,[Validators.minLength(3),Validators.pattern(/^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s]+$/)]);
+  examenControl = new FormControl(this.dataEdit.nota.examen,[]);
   registerForm: FormGroup;
 
   constructor(public formBuilder: FormBuilder, private dialogRef: MatDialogRef<EditarNotaComponent>, @Inject(MAT_DIALOG_DATA) public message:string) {
@@ -27,8 +27,8 @@ export class EditarNotaComponent {
 
   onSubmit(): void {
     if (this.registerForm.valid) {
-      const beforeAlumnos = this.dataEditar.alumnos;
-      const alumnos = this.registerForm.value;
+      const beforeAlumnos = this.dataEdit.alumnos;
+      const alumno = this.registerForm.value;
       const alumnos = this.dataEdit.listAlumnos;
       const index = alumnos.findIndex((s:any) => s.nombre === beforeAlumnos.nombre && s.apellido === beforeAlumnos.apellido);
       if (index >= 0) {

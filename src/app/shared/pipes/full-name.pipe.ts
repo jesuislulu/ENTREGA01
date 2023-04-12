@@ -2,7 +2,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { formatAlumnos } from 'src/app/interface/alumnos';
 
 @Pipe({
-  nombre: 'fullName'
+  name: 'fullName'
 })
 export class FullNamePipe implements PipeTransform {
 

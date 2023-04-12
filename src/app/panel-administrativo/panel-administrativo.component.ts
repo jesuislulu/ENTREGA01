@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { FullNamePipe } from '../shared/pipes/full-name.pipe';
+
 
 @Component({
   selector: 'app-panel-administrativo',

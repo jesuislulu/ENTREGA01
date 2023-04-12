@@ -8,8 +8,7 @@ import { ELEMENT_DATA } from 'src/app/constants/constants';
   templateUrl: './formularios.component.html',
   styleUrls: ['./formularios.component.scss']
 })
-export class FormulariosComponent {
-  
+export class FormulariosComponent {  
   nombreControl = new FormControl(
     '',
     [

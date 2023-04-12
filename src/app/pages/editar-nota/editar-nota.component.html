@@ -1,4 +1,4 @@
-<h1 mat-dialog-title>Editar NOTA</h1>
+<h1 mat-dialog-title>Editar Nota</h1>
 <form (ngSubmit)="onSubmit()"
 [formGroup]="registerForm"
 class="container">
@@ -23,7 +23,7 @@ class="container">
     [ngClass]="{ 'form-invalid': this.statusControl.invalid && this.statusControl.touched }"
     >
       <mat-option [value]="true">APROBADO</mat-option>
-      <mat-option [value]="false">REPROBADO</mat-option>
+      <mat-option [value]="false">DESAPROBADO</mat-option>
     </mat-select>
   </mat-form-field>
   <br>
