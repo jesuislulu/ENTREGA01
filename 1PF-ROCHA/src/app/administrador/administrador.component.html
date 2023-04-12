@@ -1,0 +1,37 @@
+<mat-toolbar color="primary">
+    <!--TOOLBAR-->
+    <button mat-icon-button class="icon" (click)="drawer.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span appFontSize>Materia/Asignatura</span>
+    <span class="spacer"></span>
+    <button mat-icon-button (click)="navigate(0)" class="icon favorite-icon">
+      <mat-icon>home</mat-icon>
+      </button>
+  </mat-toolbar>
+  
+  <mat-drawer-container class="container" autosize>
+  <!--MENÚ LATERAL-->
+    <mat-drawer #drawer class="sidenav" mode="side">
+      <!--SECCIONES-->
+      <div class="dflex">
+        <button color="accent" (click)="navigate(1)" class="my-10" mat-raised-button>
+          + agregar alumno
+        </button>
+        <button color="accent" (click)="navigate(2)" class="my-10" mat-raised-button>
+          Lista de alumnos
+        </button>
+        <button color="accent" disabled class="my-10" mat-raised-button>
+          Asistencias
+        </button>
+        <button color="accent" disabled class="my-10" mat-raised-button>
+          Trabajos Prácticos
+        </button>
+        <button color="accent" disabled class="my-10" mat-raised-button>
+          Exámenes
+        </button>
+      </div>
+    </mat-drawer>
+    <router-outlet></router-outlet>
+  </mat-drawer-container>
+  
