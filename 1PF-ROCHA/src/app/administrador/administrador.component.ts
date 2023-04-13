@@ -15,10 +15,10 @@ export class AdministradorComponent {
   navigate(value:number) {
     switch (value) {
       case 1:
-        this.router.navigate(['/form']);
+        this.router.navigate(['/formulario']);
         break;
       case 2:
-        this.router.navigate(['/students']);
+        this.router.navigate(['/alumnos']);
         break;
       default:
         this.router.navigate(['/'])

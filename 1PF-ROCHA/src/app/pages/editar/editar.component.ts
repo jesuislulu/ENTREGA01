@@ -14,21 +14,22 @@ export class EditarComponent {
   nombreControl = new FormControl(this.dataEdit.alumnos.nombre,[Validators.minLength(3),Validators.pattern(/^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s]+$/)]);
   apellidoControl = new FormControl(this.dataEdit.alumnos.apellido,[Validators.minLength(3),Validators.pattern(/^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s]+$/)]);
   examenControl = new FormControl(this.dataEdit.alumnos.examen,[]);
-  registerForm: FormGroup;
+  alumnosForm: FormGroup;
 
+  
   constructor(public formBuilder: FormBuilder, private dialogRef: MatDialogRef<EditarComponent>, @Inject(MAT_DIALOG_DATA) public message:string) {
 
-    this.registerForm = this.formBuilder.group({
+    this.alumnosForm = this.formBuilder.group({
       name: this.nombreControl,
       lastName: this.apellidoControl,
-      status: this.examenControl
+      examen: this.examenControl
     });    
   }
 
   onSubmit(): void {
-    if (this.registerForm.valid) {
+    if (this.alumnosForm.valid) {
       const beforeAlumnos = this.dataEdit.alumnos;
-      const alumno = this.registerForm.value;
+      const alumno = this.alumnosForm.value;
       const alumnos = this.dataEdit.listAlumnos;
       const index = alumnos.findIndex((s:any) => s.nombre === beforeAlumnos.nombre && s.apellido === beforeAlumnos.apellido);
       if (index >= 0) {

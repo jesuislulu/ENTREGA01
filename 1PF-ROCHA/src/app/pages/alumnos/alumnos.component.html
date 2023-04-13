@@ -1,19 +1,19 @@
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
     <!-- COLUMNA NOMBRE -->
-    <ng-container matColumnDef="Nombre">
+    <ng-container matColumnDef="nombre">
       <th mat-header-cell *matHeaderCellDef> Nombre </th>
       <td mat-cell *matCellDef="let element"> {{element | fullName }}</td>
     </ng-container>
   
     <!-- COLUMNA EXAMEN -->
-    <ng-container matColumnDef="Examen">
+    <ng-container matColumnDef="examen">
       <th mat-header-cell *matHeaderCellDef> Examen </th>
       <td mat-cell *matCellDef="let element"> {{element.status ? "APROBADO" : "DESAPROBADO"}} </td>
     </ng-container>
   
     <!-- COLUMNA EDITAR -->
-    <ng-container matColumnDef="Editar/Modificar">
+    <ng-container matColumnDef="editar">
       <th mat-header-cell *matHeaderCellDef> Editar </th>
       <td mat-cell *matCellDef="let element">
         <button mat-raised-button color="primary" (click)="dialogEditar(element)">
@@ -25,7 +25,7 @@
     </ng-container>
   
     <!-- Delete Column -->
-    <ng-container matColumnDef="Eliminar">
+    <ng-container matColumnDef="eliminar">
       <th mat-header-cell *matHeaderCellDef> Eliminar </th>
       <td mat-cell *matCellDef="let element">
         <button mat-raised-button color="primary" (click)="delete(element)">

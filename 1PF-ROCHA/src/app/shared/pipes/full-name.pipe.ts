@@ -12,3 +12,5 @@ export class FullNamePipe implements PipeTransform {
   }
 
 }
+
+

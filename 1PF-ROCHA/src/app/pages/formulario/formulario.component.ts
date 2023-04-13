@@ -12,11 +12,11 @@ export class FormularioComponent {
   nombreControl = new FormControl('',[Validators.required, Validators.minLength(3),Validators.pattern(/^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s]+$/)]);
   apellidoControl = new FormControl('',[Validators.required, Validators.minLength(3),Validators.pattern(/^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s]+$/)]);
 
-  registerForm: FormGroup;
+  alumnosForm: FormGroup;
 
   constructor(public formBuilder: FormBuilder, private router:Router) {
 
-    this.registerForm = this.formBuilder.group({
+    this.alumnosForm = this.formBuilder.group({
       nombre: this.nombreControl,
       apellido: this.apellidoControl
     });
@@ -24,20 +24,19 @@ export class FormularioComponent {
 
 
   onSubmit(): void {
-    if (this.registerForm.valid) {
-      const { nombre, apellido } = this.registerForm.value;
+        if (this.alumnosForm.valid) {
+      const { name, lastName } = this.alumnosForm.value;
       const newFormat = {
-        nombre,
-        apellido,
+        nombre: name,
+        apellido: lastName,
         examen: false
       }
       ELEMENT_DATA.push(newFormat);
-      alert('Alumno ha sido registrado correctamente.');
+      alert('El Alumno ha sido registrado correctamente.');
       this.router.navigate(['/alumnos']);
     } else {
       alert('El registro no es válido.');
     }
   }
-
-
 }
+
