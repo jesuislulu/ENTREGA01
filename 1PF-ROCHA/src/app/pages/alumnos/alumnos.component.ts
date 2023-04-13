@@ -25,7 +25,7 @@ export class AlumnosComponent {
 
   dialogEditar(element: any): void {
     const datos = {
-      alumno: element,
+      alumnos: element,
       listAlumnos: this.dataSource
     }
     const dialogRef = this.dialogService.open(EditarComponent, {

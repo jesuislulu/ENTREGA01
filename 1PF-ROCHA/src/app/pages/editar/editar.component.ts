@@ -30,7 +30,7 @@ export class EditarComponent {
       const beforeAlumnos = this.dataEdit.alumnos;
       const alumno = this.registerForm.value;
       const alumnos = this.dataEdit.listAlumnos;
-      const index = alumnos.findIndex((s:any) => s.name === beforeAlumnos.nombre && s.apellido === beforeAlumnos.apellido);
+      const index = alumnos.findIndex((s:any) => s.nombre === beforeAlumnos.nombre && s.apellido === beforeAlumnos.apellido);
       if (index >= 0) {
         alumnos[index] = alumno;
         this.dialogRef.close(alumnos)
@@ -38,7 +38,7 @@ export class EditarComponent {
         alert('Por favor inténtelo nuevamente');
       }
     } else {
-      alert('El formulario es inválido');
+      alert('Los datos no son válidos');
     }
   }
 }

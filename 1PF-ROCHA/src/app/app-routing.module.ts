@@ -5,7 +5,7 @@ import { AsistenciasComponent } from './pages/asistencias/asistencias.component'
 import { FormularioComponent } from './pages/formulario/formulario.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/students', pathMatch: 'full' },
+  { path: '', redirectTo: '/alumnos', pathMatch: 'full' },
   { path: 'formulario', component: FormularioComponent },
   { path: 'alumnos', component: AlumnosComponent },
   { path: 'asistencias', component: AsistenciasComponent }

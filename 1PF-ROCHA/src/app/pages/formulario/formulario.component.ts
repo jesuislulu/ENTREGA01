@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators,  } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ELEMENT_DATA } from 'src/app/constants/constants';
 
@@ -17,8 +17,8 @@ export class FormularioComponent {
   constructor(public formBuilder: FormBuilder, private router:Router) {
 
     this.registerForm = this.formBuilder.group({
-      name: this.nombreControl,
-      lastName: this.apellidoControl
+      nombre: this.nombreControl,
+      apellido: this.apellidoControl
     });
   }
 
@@ -32,10 +32,10 @@ export class FormularioComponent {
         examen: false
       }
       ELEMENT_DATA.push(newFormat);
-      alert('Estudiante registrado correctamente');
+      alert('Alumno ha sido registrado correctamente.');
       this.router.navigate(['/alumnos']);
     } else {
-      alert('El formulario no es valido');
+      alert('El registro no es válido.');
     }
   }
 

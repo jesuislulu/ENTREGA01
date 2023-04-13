@@ -46,6 +46,7 @@ import { PipesModule } from '../shared/pipes/pipes.module';
   exports: [
     AdministradorComponent,
     AlumnosComponent,
+    FormularioComponent,
     EditarComponent
   ],
   entryComponents: [
